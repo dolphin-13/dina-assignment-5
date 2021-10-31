@@ -11,7 +11,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 		// According to methods add(E e) and add(E e, Object[] elementData, int s) from
 		// ArrayList class
 		if (size == items.length)
-			items = grow();
+			items = growBackingObjectArray();
 		items[size] = item;
 		size += 1;
 
@@ -34,8 +34,8 @@ public class CustomArrayList<T> implements CustomList<T> {
 
 	// According to method private Object[] grow(int minCapacity) from ArrayList
 	// class
-	public Object[] grow() {
-		Object[] newItems = Arrays.copyOf(items, size + 1);
+	public Object[] growBackingObjectArray() {
+		Object[] newItems = Arrays.copyOf(items, size * 2);
 		items = newItems;
 		return newItems;
 	}

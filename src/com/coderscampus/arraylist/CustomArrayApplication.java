@@ -11,6 +11,7 @@ public class CustomArrayApplication {
 		System.out.println("Initial first student: " + students.get(0));
 		System.out.println("Now we have students: ");
 		populateStudentsData(students);
+		students.add(new Student("New Student", "new"));
 		System.out.println("Number of students: " + students.getSize());
 		System.out.println("Student#13: " + students.get(12));
 	}
